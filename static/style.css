@@ -5,24 +5,34 @@
     font-family: Arial, sans-serif;
 }
 
+/* ===== BACKGROUND FIX (MOST IMPORTANT PART) ===== */
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: url("/static/bg.jpg") no-repeat center center/cover;
+    background-image: url("/static/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     padding: 15px;
+    position: relative;
 }
 
-/* DARK OVERLAY */
-.overlay {
+/* DARK OVERLAY (BETTER CONTROL) */
+body::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+
     width: 100%;
-    background: rgba(0,0,0,0.6);
+    height: 100%;
+
+    background: rgba(0,0,0,0.55);
+    z-index: 0;
 }
 
 /* MAIN CARD */
@@ -36,8 +46,8 @@ body {
     padding: 20px;
     text-align: center;
 
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
 
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
@@ -60,7 +70,6 @@ h3 {
 input {
     width: 100%;
     margin: 10px 0;
-    color: white;
 }
 
 /* BUTTON */
@@ -96,10 +105,6 @@ img {
     width: 100%;
 }
 
-.download-btn:hover {
-    background: #1e7e34;
-}
-
 /* FOOTER */
 .footer {
     margin-top: 10px;
@@ -108,16 +113,16 @@ img {
     opacity: 0.7;
 }
 
-/* 📱 MOBILE FIX (NO ZOOM - PERFECT FIT) */
+/* 📱 MOBILE FIX */
 @media (max-width: 600px) {
 
     body {
         padding: 10px;
+        background-position: center top; /* 👈 mobile better focus */
     }
 
     .container {
         width: 95%;
-        max-width: none;
         padding: 18px;
     }
 
@@ -130,10 +135,6 @@ img {
     }
 
     button {
-        font-size: 14px;
-    }
-
-    input {
         font-size: 14px;
     }
 }
