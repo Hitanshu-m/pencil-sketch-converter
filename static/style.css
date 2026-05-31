@@ -12,10 +12,10 @@ body {
     align-items: center;
 
     background: url("/static/bg.jpg") no-repeat center center/cover;
-    padding: 15px;
+    padding: 20px;
 }
 
-/* Dark overlay */
+/* DARK OVERLAY */
 .overlay {
     position: absolute;
     top: 0;
@@ -25,15 +25,15 @@ body {
     background: rgba(0,0,0,0.6);
 }
 
-/* MAIN CARD */
+/* MAIN BOX */
 .container {
     position: relative;
     z-index: 1;
 
     width: 100%;
-    max-width: 400px;
+    max-width: 520px;   /* 👈 BIGGER BOX */
 
-    padding: 20px;
+    padding: 25px;
     text-align: center;
 
     background: rgba(255,255,255,0.1);
@@ -47,7 +47,7 @@ body {
 h1 {
     color: white;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 h3 {
@@ -58,25 +58,22 @@ h3 {
 
 /* INPUT */
 input {
-    color: white;
-    margin: 10px 0;
     width: 100%;
+    margin: 10px 0;
+    color: white;
 }
 
 /* BUTTON */
 button {
+    width: 100%;
+    padding: 12px;
+
     background: #00c6ff;
     color: white;
     border: none;
 
-    padding: 10px;
-    width: 100%;
-    margin-top: 10px;
-
     border-radius: 8px;
     cursor: pointer;
-
-    transition: 0.3s;
 }
 
 button:hover {
@@ -111,19 +108,20 @@ img {
     opacity: 0.7;
 }
 
-/* 📱 MOBILE OPTIMIZATION */
+/* 📱 MOBILE FIX */
 @media (max-width: 600px) {
 
     .container {
-        padding: 15px;
-        border-radius: 12px;
+        width: 95%;     /* 👈 FULL SCREEN FEEL */
+        max-width: none;
+        padding: 20px;
     }
 
     h1 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     button {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
