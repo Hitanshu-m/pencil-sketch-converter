@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>Pencil Sketch App</title>
+
+    <!-- ✅ IMPORTANT FIX (mobile zoom issue solve) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -10,6 +14,7 @@
 <div class="overlay"></div>
 
 <div class="container">
+
     <h1>Hitu Bhau</h1>
     <h1>🎨 Pencil Sketch Converter</h1>
 
@@ -26,7 +31,7 @@
 
         <br>
 
-        <!-- ✅ Download Button -->
+        <!-- Download Button -->
         <a href="{{ url_for('download_file', filename=result) }}">
             <button class="download-btn">⬇️ Download Image</button>
         </a>
