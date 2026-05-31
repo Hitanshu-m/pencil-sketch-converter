@@ -12,7 +12,7 @@ body {
     align-items: center;
 
     background: url("/static/bg.jpg") no-repeat center center/cover;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* DARK OVERLAY */
@@ -25,7 +25,7 @@ body {
     background: rgba(0,0,0,0.6);
 }
 
-/* MAIN CARD (same shape) */
+/* MAIN CARD */
 .container {
     position: relative;
     z-index: 1;
@@ -41,8 +41,6 @@ body {
 
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-
-    transition: transform 0.3s ease;
 }
 
 /* HEADINGS */
@@ -110,23 +108,32 @@ img {
     opacity: 0.7;
 }
 
-/* 📱 MOBILE ZOOM EFFECT */
+/* 📱 MOBILE FIX (NO ZOOM - PERFECT FIT) */
 @media (max-width: 600px) {
-
-    .container {
-        transform: scale(1.05);   /* 👈 lighter zoom (safe) */
-        transform-origin: center;
-    }
 
     body {
         padding: 10px;
+    }
+
+    .container {
+        width: 95%;
+        max-width: none;
+        padding: 18px;
     }
 
     h1 {
         font-size: 18px;
     }
 
+    h3 {
+        font-size: 14px;
+    }
+
     button {
+        font-size: 14px;
+    }
+
+    input {
         font-size: 14px;
     }
 }
