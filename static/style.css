@@ -114,8 +114,12 @@ img {
 @media (max-width: 600px) {
 
     .container {
-        transform: scale(1.1);   /* 👈 ZOOM EFFECT */
+        transform: scale(1.05);   /* 👈 lighter zoom (safe) */
         transform-origin: center;
+    }
+
+    body {
+        padding: 10px;
     }
 
     h1 {
