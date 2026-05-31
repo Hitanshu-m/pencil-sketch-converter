@@ -25,15 +25,15 @@ body {
     background: rgba(0,0,0,0.6);
 }
 
-/* MAIN BOX */
+/* MAIN CARD (same shape) */
 .container {
     position: relative;
     z-index: 1;
 
     width: 100%;
-    max-width: 520px;   /* 👈 BIGGER BOX */
+    max-width: 400px;
 
-    padding: 25px;
+    padding: 20px;
     text-align: center;
 
     background: rgba(255,255,255,0.1);
@@ -41,13 +41,15 @@ body {
 
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+    transition: transform 0.3s ease;
 }
 
 /* HEADINGS */
 h1 {
     color: white;
     margin-bottom: 10px;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 h3 {
@@ -108,20 +110,19 @@ img {
     opacity: 0.7;
 }
 
-/* 📱 MOBILE FIX */
+/* 📱 MOBILE ZOOM EFFECT */
 @media (max-width: 600px) {
 
     .container {
-        width: 95%;     /* 👈 FULL SCREEN FEEL */
-        max-width: none;
-        padding: 20px;
+        transform: scale(1.1);   /* 👈 ZOOM EFFECT */
+        transform-origin: center;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     button {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
