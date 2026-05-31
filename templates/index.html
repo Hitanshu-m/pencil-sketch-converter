@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pencil Sketch App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <h1>Hitu Bhau</h1>
+    <h1>🎨 Pencil Sketch Converter</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br>
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if result %}
+        <h3>Output Image</h3>
+
+        <img src="{{ url_for('static', filename='output/' + result) }}">
+
+        <br>
+
+        <!-- ✅ Download Button -->
+        <a href="{{ url_for('download_file', filename=result) }}">
+            <button class="download-btn">⬇️ Download Image</button>
+        </a>
+    {% endif %}
+
+    <div class="footer">
+        Upload → Convert → Download Sketch
+    </div>
+
+</div>
+
+</body>
+</html>

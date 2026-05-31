@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+
+venv/
+env/
+
+.DS_Store
+
+static/uploads/*
+static/output/*
+
+.env
+*.log
